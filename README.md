@@ -63,8 +63,12 @@ Stretch Features
 + `Game#esrb`
 + a game is initiated with a esrb rating
 
+[User Stories]
 
-
+* As a user, I want to be able to enter my name to retrieve my records
+* As a user, I want to enter a location and be given a random nearby restaurant suggestion
+* As a user, I should be able to reject a suggestion and not see that restaurant suggestion again
+* As a user, I want to be able to save to and retrieve a list of favorite restaurant suggestions
 
 # Module One Final Project Guidelines
 
