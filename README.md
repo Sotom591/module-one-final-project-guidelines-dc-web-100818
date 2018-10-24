@@ -1,3 +1,71 @@
+Deliverables:
+
+ - Gather data on Steam games
+ - Use that information to implement methods  described below
+
+<----Game --->
+<!-- - See a list of all Steam games(we will limit this to ~100 games maybe?)
+- Initiate with name, genre, date, ersb rating
+
+- See a list of top games -->
+
+ <----User---->
+ <!-- - Allow a user to keep a list of games they're playing
+ - Allow a user to save favorite Games seperate from the main list
+ - Allow a user to get new recommended Games
+ - Allow a user to reject recommended Games and never get that recommendation again -->
+
+### `Game`
++ `Game.all`
++ returns all of the Games
++ `Game#name`
++ a game is initiated with a name
++ `Game#genre`
++ a game is initiated with a genre
++ `Game#date`
++ a game is initiated with a date
+<!-- + `Game#esrb`
++ a game is initiated with a esrb rating -->
++ `Game#top_list`
++ returns top 3 Games based on all users
++ `Game#newest_game`
++ returns newest Steam games
+
+
+
+### `User`
++ `User.all`
++ returns all of the Users
++ `User#favorite_games`
++ returns top 3 favorite games of the user based on what user puts there
++ `User#recommended_for_me`
++ returns a random recommended game
++ `User#reject_recommended`
++ allows a user to reject a recommendation and not see it again
++ `User#search_by_genre(genre)`
++ allows a user to see all games by specified genre
++ `User#search_by_ersb(esrb)`
++ allows a user to see all games by specified ersb rating
++ `User#search_by_date(date)`
++ allows a user to see all games by recent date
+
+
+### `Review`
++ `Review.all`
++ Returns all of the Reviews
++ `Review#user`
++ a game is initiated with a user
++ `Review#game`
++ a game is initiated with a game
++ `Review#score`
++ a game is initiated with a score(1..5)
+
+
+
+
+
+
+
 # Module One Final Project Guidelines
 
 Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
