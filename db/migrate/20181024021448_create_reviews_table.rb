@@ -1,4 +1,4 @@
-class CreateReviewsTable < ActiveRecord::Migration[5.2]
+class CreateReviewsTable < ActiveRecord::Migration[5.0]
   def change
     create_table :reviews do |t|
      t.integer :user_id
