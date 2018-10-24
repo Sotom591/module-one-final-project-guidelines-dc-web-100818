@@ -16,16 +16,14 @@ Deliverables:
  - Allow a user to reject recommended Games and never get that recommendation again -->
 
 ### `Game`
-+ `Game.all`
+<!-- + `Game.all`
 + returns all of the Games
 + `Game#name`
 + a game is initiated with a name
 + `Game#genre`
 + a game is initiated with a genre
 + `Game#date`
-+ a game is initiated with a date
-<!-- + `Game#esrb`
-+ a game is initiated with a esrb rating -->
++ a game is initiated with a date -->
 + `Game#top_list`
 + returns top 3 Games based on all users
 + `Game#newest_game`
@@ -34,8 +32,8 @@ Deliverables:
 
 
 ### `User`
-+ `User.all`
-+ returns all of the Users
+<!-- + `User.all`
++ returns all of the Users -->
 + `User#favorite_games`
 + returns top 3 favorite games of the user based on what user puts there
 + `User#recommended_for_me`
@@ -57,14 +55,20 @@ Deliverables:
 + a game is initiated with a user
 + `Review#game`
 + a game is initiated with a game
-+ `Review#score`
-+ a game is initiated with a score(1..5)
++ `Review#rating`
++ a game is initiated with a rating(1..5)
 
 
+Stretch Features
++ `Game#esrb`
++ a game is initiated with a esrb rating
 
+[User Stories]
 
-
-
+* As a user, I want to be able to enter my name to retrieve my records
+* As a user, I want to enter a location and be given a random nearby restaurant suggestion
+* As a user, I should be able to reject a suggestion and not see that restaurant suggestion again
+* As a user, I want to be able to save to and retrieve a list of favorite restaurant suggestions
 
 # Module One Final Project Guidelines
 
