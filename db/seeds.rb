@@ -19,10 +19,10 @@ review2 = Review.create(user: jenny, game: ldead, rating: 2)
 review3 = Review.create(user: jenny, game: pong, rating: 3)
 #^user 1 recaroline
 review4 = Review.create(user: marissa, game: gta, rating: 2)
-review5 = Review.create(user: marissa, game: cstrick, rating: 3)
+review5 = Review.create(user: marissa, game: cstrike, rating: 3)
 review6 = Review.create(user: marissa, game: fifa19, rating: 5)
 #^user 2 reviews
 review7 = Review.create(user: caroline, game: revil, rating: 1)
-review8 = Review.create(user: caroline, game: helo, rating: 5)
+review8 = Review.create(user: caroline, game: halo, rating: 5)
 review9 = Review.create(user: caroline, game: nba2k19, rating: 5)
 #^user 3 reviews

@@ -1,3 +1,5 @@
+require 'json'
+
 class User < ActiveRecord::Base
   has_many :reviews
   has_many :games, through: :reviews
@@ -9,8 +11,8 @@ class User < ActiveRecord::Base
 
 
 
-def rate_game(game, rating)
-    current_game = self.reviews.find do |review|
+    def rate_game(game, rating)
+      current_game = self.reviews.find do |review|
         review.game == game
       end
        if current_game == nil
