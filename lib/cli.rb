@@ -29,7 +29,8 @@ class CommandLineInterface
   def menu_option_select
 welcome
     loop do
-    puts "Please select a menu option and hit enter"
+    puts "Please select a menu option and hit enter
+-----------------------------------------"
     input = gets.chomp
 
       case input
@@ -56,7 +57,7 @@ welcome
   end
 
 
-  def number_one
+  def help_option
     puts "Help - Instructions:
     ~~~~~~~~~~~~~~~~~~~~~~
   add after marissa finishes the outline
