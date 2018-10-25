@@ -6,16 +6,25 @@ class Game < ActiveRecord::Base
   has_many :users, through: :reviews
 
 
+
+
   def self.newest_game
      all_dates = self.all.collect do |game|
        game.date
      end
      newest = all_dates.sort[-1]
-     self.all.find do |game|
+     n = self.all.find do |game|
        game.date == newest
      end
+     puts "#{n.name}"
    end
-
+#enter the game name you're looking for
+#prompt them,
+#im going to enter the name
+#once i press enter gets chomp
+#once I have the user infermation get API
+#hey im getting the api for this request
+#save it the find_by
 
   def average_rating
   rating = reviews.collect do |review|

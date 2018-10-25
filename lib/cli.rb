@@ -10,19 +10,22 @@ class CommandLineInterface
     puts font.write("Welcome to GameNerd!")
     puts(
     "
-    --------------------------------
-    Let's find some new games to play!
+                              -------------------------------------------------------
+                              |     Let's find some new games to play               |
+                              |     1. Help - Instructions                          |
+                              |     2. Search for a game by:                        |
+                              |       a. name                                       |
+                              |       b. platform                                   |
+                              |       c. rating                                     |
+                              |       d. newest                                     |
+                              |     3. Get a random game recommendation by platform |
+                              |     4. Get a review of a game                       |
+                              |     5. Exit                                         |
+                              -------------------------------------------------------
 
-    1. Help - Instructions
-    2. Search for a game by:
-      a. name
-      b. platform
-      c. rating
-      d. newest
-    3. Get a random game recommendation by platform
-    4. Get a review of a game
-    5. Exit
-    --------------------------------
+
+
+
     ")
   end
 
@@ -36,8 +39,14 @@ welcome
       case input
       when "1"
         help_option
-      when "2"
-        game_search_option
+      when "2a"
+        game_search_name
+      when "2b"
+        game_search_platform
+      when "2c"
+        game_search_rating
+      when "2d"
+        game_search_newest
       when "3"
         random_game_option
       when "4"
@@ -53,33 +62,39 @@ welcome
 
 
   def exit_option
-   puts "Level up!"
+   puts "Goodbye!"
   end
 
 
   def help_option
-    puts "Help - Instructions:
-    ~~~~~~~~~~~~~~~~~~~~~~
-  add after marissa finishes the outline
-    ~~~~~~~~~~~~~~~~~~~~~~
+    puts "
+
+
+    Help - Instructions:
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    When is asks:
+    'Please select a menu option and hit enter'
+    put in a number from 1 - 5
+
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
     "
   end
 
-  def number_two
+  def game_search_newest
   #2. Search for a game by:
-    #a. name
-    #b. platform
-    #c. rating
     #d. newest
+    Game.newest_game
   end
 
-  def number_three
+  def random_game_option
    #3. Get a random game recommendation by platform
+   Game.reviews.rand.first
   end
 
-  def number_four
+  def game_review_option
     #4. Get a review of a game
   end
 
