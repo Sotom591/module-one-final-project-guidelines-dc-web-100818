@@ -2,5 +2,5 @@ require_relative '../config/environment.rb'
 
 cli = CommandLineInterface.new
 
-cli.welcome
-cli.number_one
+
+cli.menu_option_select
