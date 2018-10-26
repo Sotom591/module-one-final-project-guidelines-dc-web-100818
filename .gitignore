@@ -13,3 +13,4 @@ tmp
 db/*.db
 db/schema.rb
 lib/igdb_api.rb
+DEVREADME.md
