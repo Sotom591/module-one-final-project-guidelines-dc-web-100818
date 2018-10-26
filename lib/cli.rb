@@ -14,7 +14,8 @@ class CommandLineInterface
     "
                                 -------------------------------------------------------
                                       Let's find some new games to play! 🙋🏽‍♀️🙋🏻‍♀️
-                                |     1. Help - Instructions                          |
+                                |     1. Help - Instructions
+                                    | 2a. Create a new user
                                       2. Search for a game by name
                                 |     3. Look up a games:                             |
                                          a. ersb synopsis
@@ -39,7 +40,10 @@ class CommandLineInterface
         help_option #done(maybe add more instruction)
 
       when "2"
-        game_search_name #fix array
+        game_search_name
+
+      when "2a"
+        create_new_user
 
       when "3a"
         game_search_ersb #double-check
@@ -74,7 +78,7 @@ class CommandLineInterface
                       b. rating
                       c. release date
                     4. Get a random game recommendation
-                    5 Exit
+                    5. Exit
 
         Ex.         You: 2
             => Search by name:
@@ -102,10 +106,8 @@ class CommandLineInterface
       puts "loading ▍▍▍▍▍▍▍▍▍▍▍
       \n"
       sleep 1
-      puts "Here's some games with that name:\n#{GameAPI.search_name("#{input}")}
+      puts "Here's some games with that name:\n#{Game.search_name("#{input}")}
       \n"
-
-      puts menu
   end
 
   def game_search_esrb
@@ -114,7 +116,7 @@ class CommandLineInterface
     puts "loading ▍▍▍▍▍▍▍▍▍▍▍
     \n"
     sleep 1
-    puts "Wow, this is a lot of info! \n#{GameAPI.search_esrb_synopsis("#{input}")}"
+    puts "Wow, this is a lot of info! \n#{Game.search_esrb_synopsis("#{input}")}"
   end
 
   def game_search_rating
@@ -123,7 +125,7 @@ class CommandLineInterface
     puts "loading ▍▍▍▍▍▍▍▍▍▍▍
     \n"
     sleep 1
-    puts "Wow, I can't believe #{input} got a rating of: #{GameAPI.search_rating("#{input}")}"
+    puts "Wow, I can't believe #{input} got a rating of: #{Game.search_rating("#{input}")}"
   end
 
   def game_search_release
@@ -132,16 +134,22 @@ class CommandLineInterface
     puts "loading ▍▍▍▍▍▍▍▍▍▍▍
     \n"
     sleep 1
-    puts "Looks like... #{input} came out: #{GameAPI.search_release_date("#{input}")}"
+    puts "Looks like... #{input} came out: #{Game.search_release_date("#{input}")}"
   end
 
 
   def random_game_option
-   puts "Why don't you check out: #{GameAPI.random_game_option}"
+   puts "Why don't you check out: #{Game.random_game_option}"
   end
 
   def game_review_option
     #4. Get a review of a game
+  end
+
+  def create_new_user
+    input = gets.chomp
+    puts "Please create a username: #{User.new_user("#{input}")}"
+
   end
 
   def exit_option
