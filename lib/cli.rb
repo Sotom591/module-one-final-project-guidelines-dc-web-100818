@@ -44,8 +44,6 @@ class CommandLineInterface
 
       when "2a"
         create_new_user
-      when "2b"
-        adding_game
 
       when "3a"
         game_search_ersb #double-check
@@ -149,11 +147,17 @@ class CommandLineInterface
   end
 
   def create_new_user
+    input = gets.chomp
+
+    puts
+    un = "#{User.new_user("#{input}")}"
+
+  end
+  def create_new_user
     puts "Please create a username: "
     input = gets.chomp
-    "#{User.new_user("#{input}")}"
+    un = "#{User.new_user("#{input}")}"
     puts "New username #{input} created!"
-
   end
 
   def adding_game
