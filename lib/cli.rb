@@ -112,7 +112,7 @@ welcome
   end
 
 
-IGDB::API.games [1942,3344], {fields: "name,rating"}
+IGDB::API.games [1942], {fields: "name,rating"}
 
 
 end
