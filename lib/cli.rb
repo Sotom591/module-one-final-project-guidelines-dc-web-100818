@@ -40,24 +40,24 @@ class CommandLineInterface
         help_option #done(maybe add more instruction)
 
       when "2"
-        game_search_name
-
-      when "2a"
         create_new_user
 
-      when "3a"
+      when "3"
+        game_search_name
+
+      when "4a"
         game_search_esrb #double-check
 
-      when "3b"
+      when "4b"
         game_search_rating #double-check
 
-      when "3c"
+      when "4c"
         game_search_release
 
-      when "4"
+      when "5"
         random_game_option #done
 
-      when "5"
+      when "6"
         exit_option #done
 
         break
@@ -72,15 +72,16 @@ class CommandLineInterface
 -----------------------------------------------------------------------------
     -  Type your desired numerical selection based off of one of the menu options.
                     1. Help - Instructions
-                    2. Search for a game by name
-                    3. Look up a games:
-                      a. ersb synopsis
+                    2. Create a new user
+                    3. Search for a game by name
+                    4. Look up a games:
+                      a. esrb synopsis
                       b. rating
                       c. release date
-                    4. Get a random game recommendation
-                    5. Exit
+                    5. Get a random game recommendation
+                    6. Exit
 
-        Ex.         You: 2
+        Ex.         You: 3
             => Search by name:
                     You: Mario Kart
             => Here's some games with that name:
@@ -100,6 +101,13 @@ class CommandLineInterface
     "
   end
 
+  def create_new_user
+    puts "Please create a username: "
+    input = gets.chomp
+    un = "#{User.new_user("#{input}")}"
+    puts "New username #{input} created!"
+  end
+  
   def game_search_name
       puts "Search by name: "
       input = gets.chomp
@@ -142,36 +150,8 @@ class CommandLineInterface
    puts "Why don't you check out: #{Game.random_game_option}"
   end
 
-  def game_review_option
-    #4. Get a review of a game
-  end
 
-  # def create_new_user
-  #   input = gets.chomp
-  #
-  #   puts
-  #   un = "#{User.new_user("#{input}")}"
-  #
-  # end
-  def create_new_user
-    puts "Please create a username: "
-    input = gets.chomp
-    un = "#{User.new_user("#{input}")}"
-    puts "New username #{input} created!"
-  end
-  #
-  # def adding_game
-  #   puts "Please create a username: "
-  #   input = gets.chomp
-  #   un = "#{User.new_user("#{input}")}"
-  #   puts "New username #{input} created!"
-  #
-  #   puts "Please add a game: "
-  #   input = gets.chomp
-  #
-  #   "#{add_game_to_queue("#{input}")}"
-  #   puts "New game #{input} created!"
-  # end
+
 
   def exit_option
     font = TTY::Font.new(:doom)
