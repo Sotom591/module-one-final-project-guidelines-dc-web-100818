@@ -6,67 +6,66 @@ class CommandLineInterface
 
   def welcome
     font = TTY::Font.new(:doom)
-    system "say Welcome to Game Nerd"
     puts font.write("Welcome to GameNerd!")
+    system "say Welcome to Game Nerd"
+
     puts(
 
     "
                                 -------------------------------------------------------
-                                |     Let's find some new games to play  🎮             |
+                                |     Let's find some new games to play! 🙋🏽‍♀️🙋🏻‍♀️        |
                                 |     1. Help - Instructions                          |
-                                |     2. Search for a game by:                        |
-                                |       a. name                                       |
-                                |       b. ersb synopsis                                      |
-                                |       c. rating                                     |
-                                |       d. release date                                     |
-                                |     3. Get a random game recommendation by platform |
-                                |     4. Get a review of a game                       |
+                                |     2. Search for a game by name                    |
+                                |     3. Look up a games:                             |
+                                |        a. ersb synopsis                             |
+                                |        b. rating                                    |
+                                |        c. release date                              |
+                                |     4. Get a random game recommendation             |
                                 |     5. Exit                                         |
-                                -------------------------------------------------------  ")
+                                -------------------------------------------------------
+
+                                ")
   end
 
   def menu_option_select
     welcome
     loop do
-    puts "Please select a menu option and hit enter
------------------------------------------"
-      input = gets.chomp
+    puts "\n \n \n Please select a menu option and hit enter
+-------------------------------------------------------"
+      input = gets.chomp.downcase
 
       case input
       when "1"
         help_option #done(maybe add more instruction)
 
-      when "2a"
-        game_search_name #done
+      when "2"
+        game_search_name #fix array
 
-      when "2b"
-        game_search_genre
+      when "3a"
+        game_search_ersb #double-check
 
-      when "2c"
-        game_search_rating
+      when "3b"
+        game_search_rating #double-check
 
-      when "2d"
-        game_search_newest
-
-      when "3"
-        random_game_option
+      when "3c"
+        game_search_release
 
       when "4"
-        game_review_option
+        random_game_option #done
 
       when "5"
         exit_option #done
 
         break
       else
-        puts "Maybe you meant a different number."
+        puts "Maybe you meant a different number?"
       end
     end
   end
 
   def help_option
     puts "Help - Instructions:
-    ~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------
       Type your desired numerical options in the menu to make a selection.
 
       You may make multiple selections until you are finished.
@@ -75,28 +74,40 @@ class CommandLineInterface
 
       You may reference the README file for further information.
 
-      Have fun! 🙋🏽‍♀️🙋🏻‍♀️
-    ~~~~~~~~~~~~~~~~~~~~~~
+      Level up! 🍄
+
+-------------------------------------------------------
     "
   end
 
   def game_search_name
-      puts "search by name:"
+      puts "search by name: "
       input = gets.chomp
-      puts "loading ▍▍▍▍▍▍▍▍▍▍▍"
-      puts "Here's a game with that name: #{GameAPI.search_name("#{input}")}"
+      puts "loading ▍▍▍▍▍▍▍▍▍▍▍
+      \n
+      \n"
+      sleep 2
+      puts "Here's some games with that name: \n #{GameAPI.search_name("#{input}")}"
   end
 
-  def game_search_genre
-      puts "#{GameAPI.game}"
+  def game_search_ersb
+    puts "search by name: "
+    input = gets.chomp
+    puts "loading ▍▍▍▍▍▍▍▍▍▍▍"
+    sleep 2
+    puts "Wow, this is a lot of info! \n #{GameAPI.search_ersb_synopsis("#{input}")}"
   end
 
   def game_search_rating
-
+    puts "search by name: "
+    input = gets.chomp
+    puts "loading ▍▍▍▍▍▍▍▍▍▍▍"
+    sleep 2
+    puts "Here's a game with that name: #{GameAPI.search_rating("#{input}")}"
   end
 
-  def game_search_newest
-      puts "This newest game available is #{Game.newest_game}"
+  def game_search_release
+
   end
 
 
@@ -109,7 +120,7 @@ class CommandLineInterface
   end
 
   def exit_option
-   puts "Level up! 🍄"
+   puts "Game Over! 🎮"
   end
 
 
