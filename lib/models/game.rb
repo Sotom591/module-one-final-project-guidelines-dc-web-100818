@@ -3,8 +3,8 @@ require 'json'
 require 'igdb_client'
 
 class Game < ActiveRecord::Base
-  has_many :reviews
-  has_many :users, through: :reviews
+  has_many :gamequeues
+  has_many :users, through: :gamequeues
 
 
     def self.search_name(name)

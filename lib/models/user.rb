@@ -1,20 +1,19 @@
 require 'json'
 
 class User < ActiveRecord::Base
-  has_many :reviews
-  has_many :games, through: :reviews
+  has_many :gamequeues
+  has_many :games, through: :gamequeues
 
+  def self.new_user(name)
+    self.create(name: name)
+  end
+  #
+  # def add_game_to_queue(game)
+  #   GameQueue.create(user: self, game: game)
+  # end
+  #
 
-    def rate_game(game, rating)
-      current_game = self.reviews.find do |review|
-        review.game == game
-      end
-       if current_game == nil
-         game_obj = Game.find_by(name: "#{game}")
-         new_review = Review.create(user: self ,game: game_obj, rating: rating)
-       else
-         current_mov.rating = rating
-      end
-     end
 
 end
+# binding.pry
+# 0
