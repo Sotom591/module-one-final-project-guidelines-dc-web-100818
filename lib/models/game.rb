@@ -29,7 +29,7 @@ class Game < ActiveRecord::Base
     if obj_name.first.rating == nil
        "Sorry! Couldn't find a game by that name! Try a different name!"
      else
-       obj_name.first.rating
+       obj_name.first.rating.to_i
     end
   end
 
