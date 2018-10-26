@@ -12,7 +12,11 @@ end
 
 def search_rating(name)
   obj_name = IGDB::API.search_games ["#{name}"], {fields: "name,rating"}
-  obj_name.first.rating
+  if obj_name.first.rating == nil
+     "Sorry! Couldn't find a game by that name! Try a differnt name!"
+   else
+     obj_name.first.rating
+  end
 end
 
 Pry.start
