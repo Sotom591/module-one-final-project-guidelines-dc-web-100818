@@ -14,7 +14,7 @@ class GameAPI
 
   def self.search_name(name)
     obj_name = IGDB::API.search_games "#{name}", {fields: "name"}
-    arr = obj_name[0..5].collect {|game| game.name}
+    arr = obj_name[0..15].collect {|game| game.name}
     next_line = arr.join("\n")
     next_line
 
@@ -22,10 +22,10 @@ class GameAPI
 
   def self.search_esrb_synopsis(name)
     obj_name = IGDB::API.search_games ["#{name}"], {fields: "name,esrb.synopsis"}
-    if obj_name.first.esrb == nil
+    if obj_name.first.esrb_synopsis == nil
      "Sorry! Couldn't find a game by that name! Try a different name!"
     else
-     obj_name.first.esrb
+     obj_name.first.esrb_synopsis
    end
   end
 
@@ -38,11 +38,20 @@ def self.search_rating(name)
   end
 end
 
+def self.search_release_date(name)
+  obj_name = IGDB::API.search_games ["#{name}"], {fields: "name,release_dates"}
+  if obj_name.first.release_dates == nil
+     "Sorry! Couldn't find a game by that name! Try a different name!"
+   else
+     obj_name.first.release_dates.first.human
+  end
+end
+
   def self.random_game_option
     num = 1 + rand(111394)
     obj_name = IGDB::API.games num, {fields: "name"}
     obj_name.first.name
   end
 end
-binding.pry
-0
+# binding.pry
+# 0

@@ -13,15 +13,15 @@ class CommandLineInterface
 
     "
                                 -------------------------------------------------------
-                                |     Let's find some new games to play! 🙋🏽‍♀️🙋🏻‍♀️        |
+                                      Let's find some new games to play! 🙋🏽‍♀️🙋🏻‍♀️
                                 |     1. Help - Instructions                          |
-                                |     2. Search for a game by name                    |
+                                      2. Search for a game by name
                                 |     3. Look up a games:                             |
-                                |        a. ersb synopsis                             |
+                                         a. ersb synopsis
                                 |        b. rating                                    |
-                                |        c. release date                              |
+                                         c. release date
                                 |     4. Get a random game recommendation             |
-                                |     5. Exit                                         |
+                                      5. Exit
                                 -------------------------------------------------------
 
                                 ")
@@ -65,18 +65,18 @@ class CommandLineInterface
 
   def help_option
     puts "Help - Instructions:
--------------------------------------------------------
-      Type your desired numerical options in the menu to make a selection.
+-----------------------------------------------------------------------------
+    -  Type your desired numerical options in the menu to make a selection.
 
-      You may make multiple selections until you are finished.
+    -  You may make multiple selections until you are finished.
 
-      If you're having issues exiting this app, please press '5'.
+    -  If you're having issues exiting this app, please press '5'.
 
-      You may reference the README file for further information.
+    -  You may reference the README file for further information.
 
-      Level up! 🍄
+                            Level up! 🍄
 
--------------------------------------------------------
+-----------------------------------------------------------------------------
     "
   end
 
@@ -84,35 +84,41 @@ class CommandLineInterface
       puts "search by name: "
       input = gets.chomp
       puts "loading ▍▍▍▍▍▍▍▍▍▍▍
-      \n
       \n"
       sleep 2
-      puts "Here's some games with that name: \n #{GameAPI.search_name("#{input}")}"
+      puts "Here's some games with that name:\n#{GameAPI.search_name("#{input}")}"
   end
 
   def game_search_ersb
     puts "search by name: "
     input = gets.chomp
-    puts "loading ▍▍▍▍▍▍▍▍▍▍▍"
+    puts "loading ▍▍▍▍▍▍▍▍▍▍▍
+    \n"
     sleep 2
-    puts "Wow, this is a lot of info! \n #{GameAPI.search_ersb_synopsis("#{input}")}"
+    puts "Wow, this is a lot of info! \n#{GameAPI.search_ersb_synopsis("#{input}")}"
   end
 
   def game_search_rating
     puts "search by name: "
     input = gets.chomp
-    puts "loading ▍▍▍▍▍▍▍▍▍▍▍"
+    puts "loading ▍▍▍▍▍▍▍▍▍▍▍
+    \n"
     sleep 2
-    puts "Here's a game with that name: #{GameAPI.search_rating("#{input}")}"
+    puts "Wow, I can't believe #{input} got a rating of: #{GameAPI.search_rating("#{input}")}"
   end
 
   def game_search_release
-
+    puts "search by name: "
+    input = gets.chomp
+    puts "loading ▍▍▍▍▍▍▍▍▍▍▍
+    \n"
+    sleep 2
+    puts "Looks like... #{input} came out: #{GameAPI.search_release_date("#{input}")}"
   end
 
 
   def random_game_option
-   puts "Why don't you check out #{GameAPI.random_game_option}?"
+   puts "Why don't you check out: #{GameAPI.random_game_option}"
   end
 
   def game_review_option
