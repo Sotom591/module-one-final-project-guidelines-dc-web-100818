@@ -12,21 +12,20 @@ class CommandLineInterface
     puts(
 
     "
-                                -------------------------------------------------------
-                                      Let's find some new games to play! 🙋🏽‍♀️🙋🏻‍♀️
-                                |     1. Help - Instructions
-                                    | 2. Create a new user
-                                      3. Search for a game by name
-                                |     4. Look up a games:                             |
-                                         a. esrb synopsis
-                                |        b. rating                                    |
-                                         c. release date
-                                |     5. Get a random game recommendation             |
-                                      6. Exit
-                                -------------------------------------------------------
-
+                                      ---------------------------------------------------------
+                                      |      Let's find some new games to play! 🙋🏽‍♀️🙋🏻‍♀️          |
+                                      |          1. Help - Instructions                       |
+                                      |          2. Create a new user                         |
+                                      |          3. Search for a game by name                 |
+                                      |          4. Look up a games:                          |
+                                      |           a. esrb synopsis                            |
+                                      |           b. rating                                   |
+                                      |           c. release date                             |
+                                      |          5. Get a random game recommendation          |
+                                      |          6. Exit                                      |
+                                      ---------------------------------------------------------
                                 ")
-  end
+                              end
 
   def menu_option_select
     welcome
@@ -67,37 +66,30 @@ class CommandLineInterface
   end
 
   def help_option
-    puts "Help - Instructions:
-------------------------------------------------------------------------------------
-    -  Type your desired numerical selection based off of one of the menu options.
-                    1. Help - Instructions
-                    2. Create a new user
-                    3. Search for a game by name
-                    4. Look up a games:
-                      a. esrb synopsis
-                      b. rating
-                      c. release date
-                    5. Get a random game recommendation
-                    6. Exit
-
-        Ex.         You: 3
-            => Search by name:
-                    You: Mario Kart
-            => Here's some games with that name:
-                    Mario Kart
-                    ...
-
-    -  You may make multiple selections until you are finished.
-
-    -  If you're having issues exiting this app, please press '5'.
-
-    -  You may reference README.md for further information.
-
-
-                            Level up! 🍄
-
-------------------------------------------------------------------------------------
-    "
+   puts "Help - Instructions:
+                       -------------------------------------------------------------------------------------------
+                               -  Type your desired numerical selection based off of one of the menu options.
+                                               1. Help - Instructions
+                                               2. Create a new user
+                                               3. Search for a game by name
+                                               4. Look up a games:
+                                                 a. ersb synopsis
+                                                 b. rating
+                                                 c. release date
+                                               5. Get a random game recommendation
+                                               6. Exit
+                                   Ex.         You: 2
+                                       => Search by name:
+                                               You: Mario Kart
+                                       => Here's some games with that name:
+                                               Mario Kart
+                                               ...
+                               -  You may make multiple selections until you are finished.
+                               -  If you're having issues exiting this app, please press '5'.
+                               -  You may reference README.md for further information.
+                                                       Level up! 🍄
+                       ------------------------------------------------------------------------------------------
+   "
   end
 
   def create_new_user
