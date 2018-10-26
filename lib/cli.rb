@@ -32,7 +32,7 @@ class CommandLineInterface
     welcome
     loop do
     puts "\n \n \n Please select a menu option and hit enter... 🎮
--------------------------------------------------------"
+----------------------------------------------------------------"
       input = gets.chomp.downcase
 
       case input
@@ -59,7 +59,6 @@ class CommandLineInterface
 
       when "6"
         exit_option #done
-
         break
       else
         puts "Maybe you meant a different number?"
@@ -69,7 +68,7 @@ class CommandLineInterface
 
   def help_option
     puts "Help - Instructions:
------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
     -  Type your desired numerical selection based off of one of the menu options.
                     1. Help - Instructions
                     2. Create a new user
@@ -97,38 +96,47 @@ class CommandLineInterface
 
                             Level up! 🍄
 
------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
     "
   end
 
   def create_new_user
-    puts "Please create a username: "
+    puts "Please create a username:
+-------------------------------------------------------"
     input = gets.chomp
     un = "#{User.new_user("#{input}")}"
-    puts "New username #{input} created!"
+    puts "
+
+    New username #{input} created!"
   end
-  
+
   def game_search_name
-      puts "Search by name: "
+      puts "Search by name:
+-------------------------------------------------------"
       input = gets.chomp
       puts "loading ▍▍▍▍▍▍▍▍▍▍▍
       \n"
       sleep 1
       puts "Here's some games with that name:\n#{Game.search_name("#{input}")}
+-------------------------------------------------------
       \n"
   end
 
   def game_search_esrb
-    puts "Search by name: "
+    puts "Search by name:
+-------------------------------------------------------"
     input = gets.chomp
     puts "loading ▍▍▍▍▍▍▍▍▍▍▍
     \n"
     sleep 1
-    puts "Wow, this is a lot of info! \n#{Game.search_esrb_synopsis("#{input}")}"
+    puts "Wow, this is a lot of info! \n#{Game.search_esrb_synopsis("#{input}")}
+-------------------------------------------------------
+    \n"
   end
 
   def game_search_rating
-    puts "Search by name: "
+    puts "Search by name:
+-------------------------------------------------------"
     input = gets.chomp.titlecase
     puts "loading ▍▍▍▍▍▍▍▍▍▍▍
     \n"
@@ -137,7 +145,8 @@ class CommandLineInterface
   end
 
   def game_search_release
-    puts "Search by name: "
+    puts "Search by name:
+-------------------------------------------------------"
     input = gets.chomp.titlecase
     puts "loading ▍▍▍▍▍▍▍▍▍▍▍
     \n"
@@ -149,8 +158,6 @@ class CommandLineInterface
   def random_game_option
    puts "Why don't you check out: #{Game.random_game_option}"
   end
-
-
 
 
   def exit_option
