@@ -11,9 +11,10 @@ class Game < ActiveRecord::Base
        game.date
      end
      newest = all_dates.sort[-1]
-     self.all.find do |game|
+    n = self.all.find do |game|
        game.date == newest
      end
+     puts "#{n.name}"
    end
 
 
