@@ -15,7 +15,7 @@ class CommandLineInterface
                               |     1. Help - Instructions                          |
                               |     2. Search for a game by:                        |
                               |       a. name                                       |
-                              |       b. platform                                   |
+                              |       b. genre                                      |
                               |       c. rating                                     |
                               |       d. newest                                     |
                               |     3. Get a random game recommendation by platform |
@@ -42,7 +42,7 @@ welcome
       when "2a"
         game_search_name
       when "2b"
-        game_search_platform
+        game_search_genre
       when "2c"
         game_search_rating
       when "2d"
@@ -70,7 +70,7 @@ welcome
     puts "
 
 
-    Help - Instructions:
+               Help - Instructions:
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     When is asks:
@@ -86,17 +86,33 @@ welcome
   def game_search_newest
   #2. Search for a game by:
     #d. newest
+    puts "
+
+-----------------"
     Game.newest_game
+    puts "-----------------
+
+    "
   end
+
+  def game_search_name
+    input = ""
+    puts "search by name: #{input}"
+    input = gets.chomp
+  end
+
 
   def random_game_option
    #3. Get a random game recommendation by platform
-   Game.reviews.rand.first
+   Game.reviews
   end
 
   def game_review_option
-    #4. Get a review of a game
+    Game.all_reviews
   end
+
+
+IGDB::API.games [1942,3344], {fields: "name,rating"}
 
 
 end

@@ -5,7 +5,11 @@ class Game < ActiveRecord::Base
   has_many :reviews
   has_many :users, through: :reviews
 
+  def all_reviews
+    puts "#{reviews}"
+  end
 
+  
 
 
   def self.newest_game

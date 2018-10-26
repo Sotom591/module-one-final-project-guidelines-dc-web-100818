@@ -5,8 +5,6 @@ class User < ActiveRecord::Base
   has_many :games, through: :reviews
 
 
-
-
     def rate_game(game, rating)
       current_game = self.reviews.find do |review|
         review.game == game
