@@ -9,21 +9,25 @@ class CommandLineInterface
     system "say Welcome to Game Nerd"
     puts font.write("Welcome to GameNerd!")
     puts(
-    "
-    --------------------------------
-    Let's find some new games to play!
 
-    1. Help - Instructions
-    2. Search for a game by:
-      a. name
-      b. platform
-      c. rating
-      d. newest
-    3. Get a random game recommendation by platform
-    4. Get a review of a game
-    5. Exit
-    --------------------------------
-    ")
+    "
+                                -------------------------------------------------------
+                                |     Let's find some new games to play  🎮             |
+                                |     1. Help - Instructions                          |
+                                |     2. Search for a game by:                        |
+                                |       a. name                                       |
+                                |       b. genre                                      |
+                                |       c. rating                                     |
+                                |       d. newest                                     |
+                                |     3. Get a random game recommendation by platform |
+                                |     4. Get a review of a game                       |
+                                |     5. Exit                                         |
+                                -------------------------------------------------------
+
+
+
+
+      "
   end
 
   def menu_option_select
@@ -35,10 +39,10 @@ welcome
 
       case input
       when "1"
-        help_option
+        help_option #done(maybe add more instruction)
 
       when "2a"
-        game_search_name
+        game_search_name #done
 
       when "2b"
         game_search_genre
@@ -56,7 +60,7 @@ welcome
         game_review_option
 
       when "5"
-        exit_option
+        exit_option #done
 
         break
       else
@@ -68,10 +72,16 @@ welcome
   def help_option
     puts "Help - Instructions:
     ~~~~~~~~~~~~~~~~~~~~~~
-      
+      Type your desired numerical options in the menu to make a selection.
+
+      You may make multiple selections until you are finished.
+
+      If you're having issues exiting this app, please press '5'.
+
+      You may reference the README file for further information.
+
+      Have fun! 🙋🏽‍♀️🙋🏻‍♀️
     ~~~~~~~~~~~~~~~~~~~~~~
-
-
     "
   end
 
@@ -104,7 +114,7 @@ welcome
   end
 
   def exit_option
-   puts "Level up!"
+   puts "Level up! 🍄"
   end
 
 
