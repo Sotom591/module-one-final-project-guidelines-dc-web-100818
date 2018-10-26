@@ -21,10 +21,19 @@ end
 
 def search_esrb_synopsis(name)
   obj_name = IGDB::API.search_games ["#{name}"], {fields: "name,esrb.synopsis"}
-  if obj_name.first.name == nil
+  if obj_name.first.esrb == nil
      "Sorry! Couldn't find a game by that name! Try a differnt name!"
    else
-     obj_name.first.name
+     obj_name.first.esrb
+  end
+end
+
+def search_release_date(name)
+  obj_name = IGDB::API.search_games ["#{name}"], {fields: "name,release_dates"}
+  if obj_name.first.release_dates == nil
+     "Sorry! Couldn't find a game by that name! Try a differnt name!"
+   else
+     obj_name.first.release_dates
   end
 end
 
