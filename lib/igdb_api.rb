@@ -25,7 +25,7 @@ class GameAPI
     if obj_name.first.esrb_synopsis == nil
      "Sorry! Couldn't find a game by that name! Try a different name!"
     else
-     obj_name.first.esrb_synopsis
+     obj_name.first.esrb.synopsis
    end
   end
 
