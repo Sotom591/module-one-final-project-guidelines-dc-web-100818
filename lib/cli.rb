@@ -16,22 +16,17 @@ class CommandLineInterface
                                 |     1. Help - Instructions                          |
                                 |     2. Search for a game by:                        |
                                 |       a. name                                       |
-                                |       b. genre                                      |
+                                |       b. ersb synopsis                                      |
                                 |       c. rating                                     |
-                                |       d. newest                                     |
+                                |       d. release date                                     |
                                 |     3. Get a random game recommendation by platform |
                                 |     4. Get a review of a game                       |
                                 |     5. Exit                                         |
-                                -------------------------------------------------------
-
-
-
-
-      "
+                                -------------------------------------------------------  ")
   end
 
   def menu_option_select
-welcome
+    welcome
     loop do
     puts "Please select a menu option and hit enter
 -----------------------------------------"
@@ -106,7 +101,7 @@ welcome
 
 
   def random_game_option
-   #3. Get a random game recommendation by platform
+   puts "Why don't you check out #{GameAPI.random_game_option}?"
   end
 
   def game_review_option
