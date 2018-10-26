@@ -15,14 +15,14 @@ class CommandLineInterface
                                 -------------------------------------------------------
                                       Let's find some new games to play! 🙋🏽‍♀️🙋🏻‍♀️
                                 |     1. Help - Instructions
-                                    | 2a. Create a new user
-                                      2. Search for a game by name
-                                |     3. Look up a games:                             |
-                                         a. ersb synopsis
+                                    | 2. Create a new user
+                                      3. Search for a game by name
+                                |     4. Look up a games:                             |
+                                         a. esrb synopsis
                                 |        b. rating                                    |
                                          c. release date
-                                |     4. Get a random game recommendation             |
-                                      5. Exit
+                                |     5. Get a random game recommendation             |
+                                      6. Exit
                                 -------------------------------------------------------
 
                                 ")
@@ -46,7 +46,7 @@ class CommandLineInterface
         create_new_user
 
       when "3a"
-        game_search_ersb #double-check
+        game_search_esrb #double-check
 
       when "3b"
         game_search_rating #double-check
@@ -146,26 +146,32 @@ class CommandLineInterface
     #4. Get a review of a game
   end
 
-  def create_new_user
-    input = gets.chomp
-
-    puts
-    un = "#{User.new_user("#{input}")}"
-
-  end
+  # def create_new_user
+  #   input = gets.chomp
+  #
+  #   puts
+  #   un = "#{User.new_user("#{input}")}"
+  #
+  # end
   def create_new_user
     puts "Please create a username: "
     input = gets.chomp
     un = "#{User.new_user("#{input}")}"
     puts "New username #{input} created!"
   end
-
-  def adding_game
-    puts "Please add a game: "
-    input = gets.chomp
-    "#{add_game_to_queue("#{input}")}"
-    puts "New game #{input} created!"
-  end
+  #
+  # def adding_game
+  #   puts "Please create a username: "
+  #   input = gets.chomp
+  #   un = "#{User.new_user("#{input}")}"
+  #   puts "New username #{input} created!"
+  #
+  #   puts "Please add a game: "
+  #   input = gets.chomp
+  #
+  #   "#{add_game_to_queue("#{input}")}"
+  #   puts "New game #{input} created!"
+  # end
 
   def exit_option
     font = TTY::Font.new(:doom)
