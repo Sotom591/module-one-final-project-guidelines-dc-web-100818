@@ -11,8 +11,8 @@ def search_name(name)
 end
 
 def search_rating(name)
-  obj_name = IGDB::API.games [194], {fields: "name,rating"}
-  obj_name.first.name
+  obj_name = IGDB::API.search_games ["#{name}"], {fields: "name,rating"}
+  obj_name.first.rating
 end
 
 Pry.start
