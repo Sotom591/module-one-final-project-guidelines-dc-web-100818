@@ -1,5 +1,6 @@
 require 'pry'
 require 'json'
+require 'igdb_client'
 
 class Game < ActiveRecord::Base
   has_many :reviews
@@ -9,7 +10,7 @@ class Game < ActiveRecord::Base
     puts "#{reviews}"
   end
 
-  
+
 
 
   def self.newest_game
@@ -40,9 +41,9 @@ class Game < ActiveRecord::Base
   def self.highest_rated
     avg_rating = self.all.collect do |game|
        game.average_rating
-       binding.pry
+
     end
-    binding.pry
+
     highest_rating = avg_rating.sort!.last
     self.all.find do |games|
       games.average_rating == highest_rating

@@ -101,7 +101,7 @@ class CommandLineInterface
     \n
     \n"
     sleep 1
-    puts "Wow, this is a lot of info! \n #{GameAPI.search_ersb_synopsis("#{input}")}"
+    puts "Wow, this is a lot of info! \n #{GameAPI.search_esrb_synopsis("#{input}")}"
   end
 
   def game_search_rating
@@ -115,16 +115,14 @@ class CommandLineInterface
     puts "Here's a game with that name: #{GameAPI.search_rating("#{input}")}"
   end
 
-  def game_search_release ##work on this 
-    puts "search by name: "
-    input = gets.chomp
-    puts "
-    loading ▍▍▍▍▍▍▍▍▍▍▍
-    \n
-    \n"
-    sleep 1
-    puts "Here's a game with that name: #{GameAPI.search_release_date("#{input}")}"
-  end
+  def game_search_release
+  puts "search by name: "
+  input = gets.chomp
+  puts "loading ▍▍▍▍▍▍▍▍▍▍▍
+  \n"
+  sleep 1
+  puts "Looks like... #{input} came out: #{GameAPI.search_release_date("#{input}")}"
+end
 
 
   def random_game_option
@@ -132,11 +130,12 @@ class CommandLineInterface
   end
 
   def game_review_option
-    #4. Get a review of a game
+    Game.highest_rated
   end
 
   def exit_option
-   puts "Game Over! 🎮"
+    Game.highest_rated
+   # puts "Game Over! 🎮"
   end
 
 

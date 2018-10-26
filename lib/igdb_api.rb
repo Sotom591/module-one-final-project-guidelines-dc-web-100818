@@ -25,7 +25,7 @@ class GameAPI
     if obj_name.first.esrb == nil
      "Sorry! Couldn't find a game by that name! Try a different name!"
     else
-     obj_name.first.esrb
+     obj_name.first.esrb.synopsis
    end
   end
 
@@ -43,7 +43,7 @@ def self.search_release_date(name)
   if obj_name.first.release_dates == nil
      "Sorry! Couldn't find a game by that name! Try a differnt name!"
    else
-     obj_name.first.release_dates
+     obj_name.first.release_dates.first.human
   end
 end
 
@@ -53,5 +53,3 @@ end
     obj_name.first.name
   end
 end
-# 
-# Pry.start
